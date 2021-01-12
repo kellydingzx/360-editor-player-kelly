@@ -12,12 +12,13 @@ public class InputPanelController : MonoBehaviour
 
     public void ClickSave()
     {
-        string name = nameinputField.GetComponent<Text>().text;
-        string text = textInputField.GetComponent<Text>().text;
+        string name = nameinputField.GetComponent<InputField>().text;
+        string text = textInputField.GetComponent<InputField>().text;
         string url = photoDisplay.GetComponent<Text>().text;
 
         Debug.Log(name);
         Debug.Log(text);
+        Debug.Log(url);
     }
 
 

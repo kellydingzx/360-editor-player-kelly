@@ -17,6 +17,11 @@ public class FileManager : MonoBehaviour
         url_display.GetComponent<Text>().text = path;
     }
 
+    //public void ChangeVideo()
+    //{
+    //    string path 
+    //}
+
     void GetImage()
     {
         if(path != null)
