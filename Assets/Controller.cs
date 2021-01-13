@@ -82,6 +82,17 @@ public class Controller : MonoBehaviour
         //Debug.Log(a.getEnd());
     }
 
+    public void delete_hotspot()
+    {
+        string id = id_display.GetComponent<Text>().text;
+        Hotspot h = (Hotspot)all_hotspots[id];
+        GameObject a = h.getHotspot();
+        all_hotspots.Remove(id);
+        Destroy(a);
+        window.SetActive(false);
+        videoPlayer.Play();
+    }
+
     class Hotspot
     {
         GameObject hotspot;

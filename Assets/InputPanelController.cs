@@ -10,29 +10,26 @@ public class InputPanelController : MonoBehaviour
     public GameObject nameinputField;
     public GameObject textInputField;
     public GameObject photoDisplay;
+    public GameObject videoDisplay;
     public GameObject id_display;
 
     public void ClickSave()
     {
         string name = nameinputField.GetComponent<InputField>().text;
         string text = textInputField.GetComponent<InputField>().text;
-        string url = photoDisplay.GetComponent<Text>().text;
+        string url_photo = photoDisplay.GetComponent<Text>().text;
+        string url_video = videoDisplay.GetComponent<Text>().text;
 
         Debug.Log(name);
         Debug.Log(text);
-        Debug.Log(url);
+        Debug.Log(url_photo);
+        Debug.Log(url_video);
+
+        nameinputField.GetComponent<InputField>().text = "Hotspot Name";
+        textInputField.GetComponent<InputField>().text = "Description";
+        photoDisplay.GetComponent<Text>().text = "Photo path here.";
+        videoDisplay.GetComponent<Text>().text = "Video path here.";
     }
-
-    public void delete_hotspot()
-    {
-        string id = id_display.GetComponent<Text>().text;
-        GameObject a = GameObject.Find(id);
-        Destroy(a);
-        window.SetActive(false);
-    }
-
-
-
 
     public class Trigger{
         private string name;
