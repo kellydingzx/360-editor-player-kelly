@@ -23,8 +23,6 @@ public class Controller : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            
-            float distance;
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y,20));
             //Vector4 position = new Vector4(worldPosition.x, worldPosition.y, worldPosition.z, (float)videoPlayer.time);
             GameObject a = Instantiate(hotspot, worldPosition, transform.rotation);
@@ -41,18 +39,8 @@ public class Controller : MonoBehaviour
                 {
                     window.SetActive(true);
                 }
-                else if (hit.transform.gameObject.tag == "Back")
-                {
-                    Debug.Log("hihihih");
-                    window.SetActive(false);
-                }
             }
         }
-
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    window.SetActive(false);
-        //}
     }
 
     public void closeWindow()

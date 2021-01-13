@@ -24,6 +24,7 @@ public class InputPanelController : MonoBehaviour
 
 
 
+
     public class Trigger{
         private string name;
         private string text;

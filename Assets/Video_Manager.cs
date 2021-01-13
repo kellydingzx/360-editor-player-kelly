@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEditor;
+//using System.Windows.Forms;
+
 
 public class Video_Manager : MonoBehaviour
 {
@@ -12,7 +14,7 @@ public class Video_Manager : MonoBehaviour
 
     public void getVideo()
     {
-        url = EditorUtility.OpenFilePanel("Get photo.", "", "mp4");
+        url = EditorUtility.OpenFilePanel("get photo.", "", "mp4");
         if (url != null)
         {
             videoPlayer.url = url;

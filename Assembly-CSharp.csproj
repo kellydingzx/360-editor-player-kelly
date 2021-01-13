@@ -287,6 +287,9 @@
     <Reference Include="DOTween">
       <HintPath>D:/Desktop/Comp0016/360VideoTest/Assets/DOTween/DOTween.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>D:/Desktop/Comp0016/360VideoTest/Assets/Plugins/System.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
     </Reference>
