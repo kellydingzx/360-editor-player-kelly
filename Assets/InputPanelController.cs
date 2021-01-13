@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class InputPanelController : MonoBehaviour
 {
+    public GameObject window;
     public GameObject nameinputField;
     public GameObject textInputField;
     public GameObject photoDisplay;
+    public GameObject id_display;
 
     public void ClickSave()
     {
@@ -21,6 +23,13 @@ public class InputPanelController : MonoBehaviour
         Debug.Log(url);
     }
 
+    public void delete_hotspot()
+    {
+        string id = id_display.GetComponent<Text>().text;
+        GameObject a = GameObject.Find(id);
+        Destroy(a);
+        window.SetActive(false);
+    }
 
 
 

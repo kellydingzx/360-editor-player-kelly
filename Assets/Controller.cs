@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class Controller : MonoBehaviour
@@ -9,13 +10,15 @@ public class Controller : MonoBehaviour
     public VideoPlayer videoPlayer;
     public GameObject hotspot;
     public GameObject window;
+    public GameObject id_display;
+    public GameObject back_button;
     //Private variables 
-    
-   
+
     // Start is called before the first frame update
     void Start()
     {
         window.SetActive(false);
+        back_button.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,7 +29,7 @@ public class Controller : MonoBehaviour
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y,20));
             //Vector4 position = new Vector4(worldPosition.x, worldPosition.y, worldPosition.z, (float)videoPlayer.time);
             GameObject a = Instantiate(hotspot, worldPosition, transform.rotation);
-            a.name = "first";
+            a.name = a.GetInstanceID().ToString();
             a.SetActive(true);
         }
 
@@ -38,6 +41,8 @@ public class Controller : MonoBehaviour
                 if(hit.transform.gameObject.tag == "Trigger")
                 {
                     window.SetActive(true);
+                    id_display.GetComponent<Text>().text = hit.transform.gameObject.GetInstanceID().ToString();
+                    videoPlayer.Pause();
                 }
             }
         }
@@ -46,6 +51,7 @@ public class Controller : MonoBehaviour
     public void closeWindow()
     {
         window.SetActive(false);
+        videoPlayer.Play();
     }
 
 }
