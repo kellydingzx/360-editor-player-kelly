@@ -74,6 +74,7 @@ public class FileManager : MonoBehaviour
         }
         videoPlayer.Play();
         inputpanel.SetActive(true);
+        back_button.SetActive(false);
     }
 
     void GetImage()
